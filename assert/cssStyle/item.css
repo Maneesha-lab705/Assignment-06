@@ -8,18 +8,27 @@ body{
     position: relative;
 }
 .container{
-    width: 100vw;
-    height: 40vw;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    /*border: white solid 2px;*/
+    /*width: 100vw;*/
+    /*height: 40vw;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0px;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*margin: auto;*/
+    /*!*border: white solid 2px;*!*/
+    /*box-shadow: 1px 1px 60px 10px ;*/
+    /*border-radius: 10px;*/
+}
+
+.container-box {
+    border: white solid 2px;
     box-shadow: 1px 1px 60px 10px ;
     border-radius: 10px;
+
+    padding: 20px;
 }
+
 .form__field {
     font-family: inherit;
     width: 100%;
@@ -56,10 +65,10 @@ h1{
 
 }
 .table{
-    width:38vw;
-    height: 60px;
-    position: relative;
-    top: 60px;
+    /*width:38vw;*/
+    /*height: 60px;*/
+    /*position: relative;*/
+    /*top: 60px;*/
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgb(254, 1, 1) 0px 3px 6px;
 }
@@ -71,14 +80,26 @@ h1{
     width: 25vw;
 }
 #data{
-    position: relative;
-    top: 4vw;
-    left: 10px;
-    box-shadow: 1px 1px 60px 10px ;
+    /*position: relative;*/
+    /*top: 4vw;*/
+    /*left: 10px;*/
+    /*box-shadow: 1px 1px 60px 10px ;*/
+    /*border-radius: 10px;*/
+    /*box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgb(1, 254, 60) 0px 2px 4px -1px;*/
+}
+
+.form-col {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.form-block {
+    width: fit-content;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgb(1, 254, 60) 0px 2px 4px -1px;
-
+    padding: 20px;
 }
+
 .navbar-expand-lg{
     position: relative;
     top: 0;
@@ -86,4 +107,6 @@ h1{
     background: transparent;
     box-shadow: 1px 1px 60px 10px ;
     border-radius: 10px;
+
+    margin-bottom: 30px;
 }
