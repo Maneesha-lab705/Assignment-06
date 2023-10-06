@@ -4,9 +4,19 @@ body{
 }
 .container{
     /*position: absolute;*/
-    /*top: 0;*/
+    top: 10vw;
     /*width: 80vw;*/
     /*left: 10vw;*/
+}
+.navbar-nav{
+    position: absolute;
+}
+h1{
+    position: absolute;
+    top: 0;
+    width: 40vw;
+    font-size: 25px;
+    left: 40vw;
 }
 .title {
     text-align: center;
@@ -70,16 +80,19 @@ table{
 
 #data{
     position: relative;
+    top: 2vw;
     box-shadow: 1px 1px 60px 10px ;
     border-radius: 10px;
 }
 #data1{
     position: relative;
+    top: 2vw;
     box-shadow: 1px 1px 60px 10px ;
     border-radius: 10px;
-}   
+}
 #data2{
     position: relative;
+    top: 2vw;
     box-shadow: 1px 1px 60px 10px ;
     border-radius: 10px;
 }
@@ -113,6 +126,6 @@ table{
 }
 .navbar-expand-lg{
     position: relative;
-    top: 5vw;
+    top: 0vw;
     height: 50px;
 }

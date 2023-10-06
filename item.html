@@ -12,38 +12,38 @@
     <link rel="stylesheet" href="assert/cssStyle/item.css">
 </head>
 <body>
-
-<div class="container container-box col-lg-12 row-cols-lg-auto">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">POS System</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only"></span></a>
-                <a class="nav-item nav-link" href="index.html">Customer</a>
-                <a class="nav-item nav-link" href="item.html">Item</a>
-                <a class="nav-item nav-link " href="orders.html">Orders</a>
-                <h1>ADD ITEMS</h1>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="assert/img/ic.png" alt="icon">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="index.html">Customer</a>
+            <a class="nav-item nav-link" href="item.html">Item</a>
+            <a class="nav-item nav-link" href="orders.html">Orders</a>
+            <h1>CUSTOMER REGISTRATION</h1>
         </div>
-    </nav>
+    </div>
+</nav>
+<div class="container container-box col-lg-12 row-cols-lg-auto">
+
 
     <div class="row">
 
         <!----------------------form--------------------------->
         <div class="form-col col-sm-12 col-md-6 col-lg-6 col-xl-6" id="data">
-            zzz<form class="form-block">
+            <form class="form-block">
                 <div class="mb-3">
                     <!--                        <label for="id" class="form-label">ID</label>-->
                     <!--                        <input type="number" class="form-control" id="id"  placeholder="Enter Id">-->
-                    <input type="input" class="form__field" placeholder="ITEM ID" name="name" id='id' required />
+                    <input type="input" class="form__field" placeholder="ITEM ID" name="name" id='item_code' required />
                 </div>
                 <div class="mb-3">
                     <!--                        <label for="name" class="form-label">Name</label>-->
                     <!--                        <input type="number" class="form-control" id="name"  placeholder="Enter name">-->
-                    <input type="input" class="form__field" placeholder="ITEM NAME" name="name" id='name' required />
+                    <input type="input" class="form__field" placeholder="ITEM NAME" name="name" id='description' required />
 
                 </div>
                 <div class="mb-3">
@@ -55,17 +55,17 @@
 
                 <div class="mb-3">
                     <!--                        <label for="contact" class="form-label">Contact</label>-->
-                    <input type="input" class="form__field" placeholder="QTY" name="qty" id='qty' required />
+                    <input type="input" class="form__field" placeholder="QTY" name="qty" id='item_qty' required />
 
                 </div>
 
 
-                <div class="mt-4 mb-5">
-                    <button class="btn btn-primary" type="submit">Save</button>
-                    <button class="btn btn-success" type="button">update</button>
-                    <button class="btn btn-danger" type="button">delete</button>
-                    <button class="btn btn-warning" type="reset ">reset</button>
-                </div>
+            <div class="mt-4 mb-5">
+                <button id="submit" type="button" class="btn btn-success">Save</button>
+                <button id="update" type="button" class="btn btn-primary">Update</button>
+                <button id="delete" type="button" class="btn btn-danger">Delete</button>
+                <button id="reset" type="reset" class="btn btn-warning">Clear</button>
+            </div>
 
             </form>
         </div>
@@ -81,27 +81,7 @@
                     <th scope="col">Qty</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>choclet</td>
-                    <td>200.00</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>Kalutara</td>
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>bird</td>
-                    <td>bird</td>
-
-                </tr>
+                <tbody id="item_table-body">
                 </tbody>
             </table>
         </div>
@@ -109,7 +89,63 @@
     </div>
 </div>
 
-<script src="assert/bootstrap/js/bootstrap.min.js"></script>
+<script src="assert/lib/jQuery.min.js"></script>
+<script>
 
+    $('#submit').on('click',()=>{
+        console.log("hello")
+        let item_code = $('#item_code').val();
+        let description = $('#description').val();
+        let price  = $('#price').val();
+        let item_qty = $('#item_qty').val();
+
+        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`
+
+        let newRow = $('<tr>');
+        newRow.append('<td>' + item_code + '</td>');
+        newRow.append('<td>' + description + '</td>');
+        newRow.append('<td>' + price + '</td>');
+        newRow.append('<td>' + item_qty + '</td>');
+
+        $('#item_table-body').append(newRow);
+
+        $("#reset").click();
+    });
+
+    $('#update').on('click',()=>{
+        let item_code = $('#item_code').val();
+        let description = $('#description').val();
+        let price  = $('#price').val();
+        let item_qty = $('#item_qty').val();
+
+        let recode = `<td class = "item_code">${item_code}</td><td class="description">${description}</td><td class="price">${price}</td><td class="item_qty">${item_qty}</td>`
+
+        $("tbody>tr").eq(row_index).html(recode);
+
+        $("#reset").click();
+    });
+
+    $('#delete').on('click',()=>{
+        $("tbody>tr").eq(row_index).remove();
+
+        $("#reset").click();
+    });
+
+    $("tbody").on("click", "tr", function () {
+
+        row_index = $(this).index();
+
+        let item_code = $(this).find("td:eq(0)").text();
+        let description = $(this).find("td:eq(1)").text();
+        let price = $(this).find("td:eq(2)").text();
+        let item_qty = $(this).find("td:eq(3)").text();
+
+        $('#item_code').val(item_code);
+        $('#description').val(description);
+        $('#price').val(price);
+        $('#item_qty').val(item_qty);
+    });
+
+</script>
 </body>
 </html>
