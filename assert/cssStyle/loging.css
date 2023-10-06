@@ -44,15 +44,13 @@ h3{
     left: 8vw;
     font-size: 20px;
 }
-.main>a>img{
-    width: 30px;
-    position: absolute;
-    top: 300px;
+.img{
+    position: relative;
+    width: 40px;
+    top: 5vw;
+    left: 9vw;
 }
-.whatsapp{
-    position: absolute;
-    left: 40px;
-}
+
 .main>div{
     position: absolute;
     right: 5vw;
